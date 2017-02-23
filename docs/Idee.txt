@@ -1,0 +1,40 @@
+Ideen
+
+Emulation mittels Plugins zum austauchen wichtiger Teile
+
+- CPU
+    - ...
+- GPU
+    - ...
+- RAM
+
+- RomLoader
+    - CD
+    - DVD
+    - BlueRay
+- Input/OutPut
+    - Audio/Video
+
+Schnittstellen
+
+- Opcodes -> CPU -> Ausführung -> ENDE
+
+Was ich brauche:
+
+-Übersicht aller Opcodes mit deren Daten
+-Implementierung jedes Opcodes
+
+##############################################
+
+CPU ist ganz nüchtern und erhält dann Daten über:
+-Register und deren Größe/Namen
+-Die Befehle/Opcodes und deren Details
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+#########################
+### XML-Dokumentation ###
+#########################
+
+Stand: 16-12-2016
+
+Dies ist die Dokumentation der XML Dateien, mit folgenden Informationen:
+
+- Verwendung von XML im Projekt
+- Aufbau und Struktur der Dateien(Standardisierung)
+
+Verwendung:
+
+XML wird derzeit nur benutzt um die Opcodes extern zu speichern.
+Die dort verwendete Struktur sieht wie folgt aus.
+
+Opcode - XML - Struktur:
+
+<data>  //RootNode
+
+    <general>  //Allgemeine Informationen über den Inhalt
+
+        <architecture>  //Informationen zur Architektur der CPU für die Befehle
+            <name>CHIP-8</name>  //sollten als Enum im Project genormt sein!
+            <version>1.4.7</version>  //Versionierung nach dem Schema X.Y.Z
+        </architecture>
+
+        <other>  //Andere Informationen, Sonstiges
+            <comment>...freier Text...</comment>  //Anmerkungen des Autors(Fehler, Probleme etc...)
+            <author>Max Mustermann</author>  //Name des Autors bzw. Nickname
+            <creationDate>16-12-2016</creationDate>  //Datum dieser Version im Format (DD-MM-JJJJ)
+        </other>
+
+    </general>
+
+    <opcodes>  //CPU-Opcodes
+
+        <command>  //Ein Opcode/CPU-Befehl
+            <name>Befehl 1</name>  //Verständlicher Name des Opcodes
+            <part>  //Teil eines Opcodes zur besseren Verarbeitung bzw. Erkennung nötig!
+                <name>Part 1</name>
+                <startIndex>0</startIndex>  //BitIndex im Opcode für diesen Teil des Opcodes
+                <endIndex>3</endIndex>  //BitIndex im Opcode für das Ende dieses Teils des Opcodes
+                <value>0110</value>  //Bits, bzw. der genaue Wert zur Erkennung des Codes
+                <necessary>true</necessary>  //Boolean, ob dieser Wert nötig für die Erkennung ist oder nicht.
+            </part>
+
+            .
+            .
+            .
+
+        </command>
+
+        .
+        .
+        .
+
+    </opcodes>
+
+</data
+
+Versionierung - Schema
+
+Syntax = X.Y.Z
+
+X,Y und Z können die Zeichen 0-9 enthalten. Sie sind erweiterbar im Rahmen von 0-99
+
+Bsp: Version 67.0.45 ist auch möglich.
+
+Z = Update, welches nur Bugfixes enthält und vollständig Kompatibel ist.
+Y = Update/Upgrade, welches Neuerungen enthält aber noch abwärtskompatibel ist.
+X = Upgrade, welches eine neue Version erfordert und nicht mehr abwärtskompatibel ist.
+
+### ENDE ###

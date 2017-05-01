@@ -31,6 +31,9 @@ CPU ist ganz nüchtern und erhält dann Daten über:
 -Die Befehle/Opcodes und deren Details
 
 
+TestZeile für eine Commit!!!
+
+
 
 
 

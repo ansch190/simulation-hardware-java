@@ -107,9 +107,9 @@ public class GpuChip8 extends VmGpu {
 
         int numberOfLines = bits.getBits(0, 4).toInt();
 
-        int ADDRESS_OFFSET_FOR_ROM = 0x200;
+        //int ADDRESS_OFFSET_FOR_ROM = 0x200;
 
-        int startIndexForSprites = cpu.indexRegister.toInt() - ADDRESS_OFFSET_FOR_ROM;
+        int startIndexForSprites = cpu.indexRegister.toInt();  //- ADDRESS_OFFSET_FOR_ROM;
 
         //Bild malen mit den Sprites
         for(int j=0; j<numberOfLines; j++){

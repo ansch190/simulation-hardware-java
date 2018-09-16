@@ -54,6 +54,9 @@ public class VmGuiThread implements Runnable {
 
         jFrame.add(jLabel);
 
+        //jFrame.pack();
+        jFrame.setVisible(true);
+
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 

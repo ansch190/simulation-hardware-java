@@ -1,7 +1,5 @@
 package general.vmgraphics;
 
-import general.vmgraphics.calculator.ImageCalculatorGrey;
-import general.vmgraphics.calculator.ImageCalculatorRandom;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +10,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+
+import general.vmgraphics.calculator.ImageCalculatorGrey;
+import general.vmgraphics.calculator.ImageCalculatorRandom;
 
 /**
  * Created by andreasschw on 02.06.2016.

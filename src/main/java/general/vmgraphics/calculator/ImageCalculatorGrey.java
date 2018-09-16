@@ -1,8 +1,8 @@
 package general.vmgraphics.calculator;
 
-import general.vmgraphics.calculator.basic.ImageCalculatorBasic;
-
 import java.awt.*;
+
+import general.vmgraphics.calculator.basic.ImageCalculatorBasic;
 
 /**
  * Created by andreasschw on 02.06.2016.

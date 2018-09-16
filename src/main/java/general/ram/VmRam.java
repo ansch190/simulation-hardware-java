@@ -1,10 +1,10 @@
 package general.ram;
 
+import java.util.HashMap;
+
 import basics.bits.Bits;
 import general.vm.components.VmComponent;
 import general.vm.components.VmComponentType;
-
-import java.util.HashMap;
 
 /**
  * Created by andreas on 28.05.16.

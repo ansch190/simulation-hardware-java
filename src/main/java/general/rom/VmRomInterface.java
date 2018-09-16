@@ -1,9 +1,9 @@
 package general.rom;
 
+import java.io.File;
+
 import basics.bits.Bits;
 import general.vm.components.VmComponentInterface;
-
-import java.io.File;
 
 /**
  * Created by andreas on 25.05.16.

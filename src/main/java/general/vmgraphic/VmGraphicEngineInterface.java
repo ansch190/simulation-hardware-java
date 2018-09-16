@@ -1,8 +1,8 @@
 package general.vmgraphic;
 
-import general.vm.components.VmComponentInterface;
-
 import java.awt.image.BufferedImage;
+
+import general.vm.components.VmComponentInterface;
 
 /**
  * Created by andreas on 11.06.16.

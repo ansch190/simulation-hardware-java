@@ -82,6 +82,8 @@ public class OpcodeXmlEngine extends XmlEngine {
     }
 
     private GenericCommandPart createCmdPart(Element part){
+        //log.info("Start createCommand!" + "\n");
+
         GenericCommandPart out = new GenericCommandPart();
 
         if(!part.getChildText("name").isEmpty()){
@@ -188,7 +190,7 @@ public class OpcodeXmlEngine extends XmlEngine {
                 }
             }
             if(needed == checked){
-                results.add(c);
+                results.add(c.copy());
             }
         }
         if(results.size() > 1 || results.isEmpty()){

@@ -49,7 +49,7 @@ public class Chip8VmTest {
         vm.addComponent(rom);
 
         //Spiel laden
-        String path = "src/main/resources/rom/IBM Logo.ch8";
+        String path = "src/main/resources/rom/chip8/IBM Logo.ch8";
         //String path = "src/main/resources/rom/Chip8 emulator Logo [Garstyciuks].ch8";
         //String path = "src/main/resources/rom/Tetris [Fran Dachille, 1991].ch8";
         File f = new File(path);

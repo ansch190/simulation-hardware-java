@@ -1,13 +1,13 @@
 package general.rom;
 
-import basics.bits.Bits;
-import general.vm.components.VmComponent;
-import general.vm.components.VmComponentType;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
+
+import basics.bits.Bits;
+import general.vm.components.VmComponent;
+import general.vm.components.VmComponentType;
 
 /**
  * Created by andreas on 25.05.16.
@@ -37,7 +37,7 @@ public class VmRom extends VmComponent implements VmRomInterface {
         try{
 //            din = new DataInputStream(new BufferedInputStream(new FileInputStream(f)));
             din = new BufferedInputStream(new FileInputStream(f));
-            din.mark(0);  //mark the Streeam for later reset() to StartPosition = 0
+            din.mark(0);  //mark the Stream for later reset() to StartPosition = 0
         }
         catch(Exception e){ e.printStackTrace(); }
     }

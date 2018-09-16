@@ -45,6 +45,24 @@ public class GenericCommand {
         this.commandParts = partList;
     }
 
+    //Deep Object Copy
+    public GenericCommand copy(){
+        String target_name = getName();
+
+        List<GenericCommandPart> source_parts = getParts();
+        List<GenericCommandPart> target_parts = new ArrayList<>(source_parts.size());
+
+        for(GenericCommandPart p : source_parts){
+            target_parts.add(p.copy());
+        }
+
+        GenericCommand gc = new GenericCommand();
+        gc.setName(target_name);
+        gc.setParts(target_parts);
+
+        return gc;
+    }
+
     @Override
     public String toString(){
         String s = "CmdName: " + this.commandName + "\nParts: " + this.commandParts;

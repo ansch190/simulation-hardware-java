@@ -1,7 +1,5 @@
 package chip8;
 
-import basics.bits.Bits;
-import chip8.cpu.opcode.Commands;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+
+import basics.bits.Bits;
+import chip8.cpu.opcode.Commands;
 
 /**
  * Created by andreas on 25.05.16.

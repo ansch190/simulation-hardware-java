@@ -1,8 +1,8 @@
 package general.vmgraphics.calculator;
 
-import general.vmgraphics.calculator.basic.ImageCalculatorBasic;
-
 import java.util.Random;
+
+import general.vmgraphics.calculator.basic.ImageCalculatorBasic;
 
 /**
  * Created by andreas on 11.06.16.

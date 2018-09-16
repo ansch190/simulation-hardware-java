@@ -7,7 +7,7 @@ package general.vm.components;
  */
 public enum VmComponentType {
 
-    CPU,
+    CPU,  //Rechenprozessor
 
     GPU,  //Grafikprozessor
 

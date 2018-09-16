@@ -1,13 +1,13 @@
 package general.vmgraphic;
 
-import general.vm.components.VmComponent;
-import general.vm.components.VmComponentType;
-import general.vmgraphics.GraphicEngine;
-
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import general.vm.components.VmComponent;
+import general.vm.components.VmComponentType;
+import general.vmgraphics.GraphicEngine;
 
 /**
  * Created by andreas on 11.06.16.

@@ -52,7 +52,7 @@ public class VmGuiManager extends VmComponent {
 
         es.execute(guiThread);
 
-        log.info("Gui-Thread started!");
+        log.info("Gui-Thread started!\n");
     }
 
     //stoppe Gui-Thread

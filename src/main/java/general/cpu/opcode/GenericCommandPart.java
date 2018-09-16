@@ -111,6 +111,20 @@ public class GenericCommandPart {
         this.valueNecessary = b;
     }
 
+    //Deep Object Copy
+    public GenericCommandPart copy(){
+        GenericCommandPart out = new GenericCommandPart();
+
+        out.setName(getName());
+        out.setStartIndexBit(getStartIndex());
+        out.setEndIndexBit(getEndIndex());
+        out.setSizeBits(getSize());
+        out.setValue(getValue());
+        out.setValueNecessary(isNeeded());
+
+        return out;
+    }
+
     @Override
     public String toString(){
         String s = "PartName: " + this.name;

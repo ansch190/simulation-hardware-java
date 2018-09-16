@@ -381,7 +381,7 @@ public class CpuChip8 extends VmCpu {
 
     public void initOpcodes(){
         opcodeXmlEngine = new OpcodeXmlEngine();
-        File f = new File("src/main/resources/opcodes_chip8.xml");
+        File f = new File("src/main/resources/config/chip8/opcodes_chip8.xml");
         opcodeXmlEngine.loadXML(f);
         opcodeXmlEngine.parse();
     }

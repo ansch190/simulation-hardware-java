@@ -10,9 +10,9 @@
         </architecture>
 
         <other>
-            <comment>unfertig! Opcodes noch unvollständig!</comment>
+            <comment>Opcodes vollständig! Reihenfolge siehe Wikipedia!</comment>
             <author>Andreas Schwanitz</author>
-            <creationDate>16-12-2016</creationDate>
+            <creationDate>17-19-2018</creationDate>
         </other>
 
     </general>
@@ -20,33 +20,19 @@
     <opcodes>
 
         <command>
-            <name>DRAW_SPRITE</name>
+            <name>CALL_RCA_1802</name>
             <part>
-                <name>N</name>
+                <name>NNN</name>
                 <startIndex>0</startIndex>
-                <endIndex>3</endIndex>
-                <value></value>
-                <necessary>false</necessary>
-            </part>
-            <part>
-                <name>Y</name>
-                <startIndex>4</startIndex>
-                <endIndex>7</endIndex>
-                <value></value>
-                <necessary>false</necessary>
-            </part>
-            <part>
-                <name>X</name>
-                <startIndex>8</startIndex>
                 <endIndex>11</endIndex>
                 <value></value>
                 <necessary>false</necessary>
             </part>
             <part>
-                <name>D</name>
+                <name>0</name>
                 <startIndex>12</startIndex>
                 <endIndex>15</endIndex>
-                <value>1101</value>
+                <value>0000</value>
                 <necessary>true</necessary>
             </part>
         </command>
@@ -84,7 +70,7 @@
         </command>
 
         <command>
-            <name>RETURN_SUB</name>
+            <name>RETURN_FROM_SUB</name>
             <part>
                 <name>E</name>
                 <startIndex>0</startIndex>
@@ -116,7 +102,7 @@
         </command>
 
         <command>
-            <name>JUMP_TO_NNN</name>
+            <name>JUMP_TO_ADDRESS</name>
             <part>
                 <name>NNN</name>
                 <startIndex>0</startIndex>
@@ -134,7 +120,7 @@
         </command>
 
         <command>
-            <name>CALL_SUB_AT_NNN</name>
+            <name>CALL_SUB</name>
             <part>
                 <name>NNN</name>
                 <startIndex>0</startIndex>
@@ -152,7 +138,7 @@
         </command>
 
         <command>
-            <name>SKIP_NEXT_CMD_IF_VX_EQUALS_NN</name>
+            <name>SKIP_CMD_IF_VX_EQUAL_NN</name>
             <part>
                 <name>NN</name>
                 <startIndex>0</startIndex>
@@ -177,7 +163,7 @@
         </command>
 
         <command>
-            <name>SKIP_NEXT_CMD_IF_VX_NOT_EQUALS_NN</name>
+            <name>SKIP_CMD_IF_VX_NOT_EQUAL_NN</name>
             <part>
                 <name>NN</name>
                 <startIndex>0</startIndex>
@@ -202,7 +188,7 @@
         </command>
 
         <command>
-            <name>SKIP_NEXT_CMD_IF_VX_EQUALS_VY</name>
+            <name>SKIP_CMD_IF_VX_EQUAL_VY</name>
             <part>
                 <name>0</name>
                 <startIndex>0</startIndex>
@@ -353,7 +339,7 @@
                 <name>2</name>
                 <startIndex>0</startIndex>
                 <endIndex>3</endIndex>
-                <value>0010</value>
+                <value>0011</value>
                 <necessary>true</necessary>
             </part>
             <part>
@@ -412,7 +398,231 @@
         </command>
 
         <command>
-            <name>SET_I_TO_NNN</name>
+            <name>SET_VX_TO_VX_XOR_VY</name>
+            <part>
+                <name>3</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0011</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>ADDS_VY_TO_VX</name>
+            <part>
+                <name>4</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0100</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_VX_TO_VX_MINUS_VY</name>
+            <part>
+                <name>5</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0101</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SHIFT_VX_RIGHT_BY_ONE</name>
+            <part>
+                <name>6</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0110</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_VX_TO_VY_MINUS_VX</name>
+            <part>
+                <name>7</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0111</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SHIFT_VX_LEFT_BY_ONE</name>
+            <part>
+                <name>E</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1110</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>8</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SKIP_IF_VX_NOT_EQUAL_VY</name>
+            <part>
+                <name>0</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0000</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>9</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1001</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_I_TO_ADDRESS</name>
             <part>
                 <name>NNN</name>
                 <startIndex>0</startIndex>
@@ -425,6 +635,24 @@
                 <startIndex>12</startIndex>
                 <endIndex>15</endIndex>
                 <value>1010</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>JUMP_TO_ADDRESS_PLUS_V0</name>
+            <part>
+                <name>NNN</name>
+                <startIndex>0</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>B</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1011</value>
                 <necessary>true</necessary>
             </part>
         </command>
@@ -450,6 +678,390 @@
                 <startIndex>12</startIndex>
                 <endIndex>15</endIndex>
                 <value>1100</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>DRAW_SPRITE</name>
+            <part>
+                <name>N</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>Y</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>D</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1101</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SKIP_CMD_IF_KEY_IN_VX_PRESSED</name>
+            <part>
+                <name>E</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1110</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>9</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>1001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>E</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1110</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SKIP_CMD_IF_KEY_IN_VX_NOT_PRESSED</name>
+            <part>
+                <name>1</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>A</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>1010</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>E</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1110</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_VX_TO_DELAY_TIMER</name>
+            <part>
+                <name>7</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0111</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>0</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0000</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>WAIT_FOR_KEY_PRESS</name>
+            <part>
+                <name>A</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1010</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>0</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0000</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_DELAY_TIMER_TO_VX</name>
+            <part>
+                <name>5</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0101</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>1</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_SOUND_TIMER_TO_VX</name>
+            <part>
+                <name>8</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1000</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>1</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>ADDS_VX_TO_I</name>
+            <part>
+                <name>E</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1110</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>1</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>SET_I_TO_CHAR_SPRITE</name>
+            <part>
+                <name>9</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>1001</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>2</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0010</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>STORE_BCD_OF_VX</name>
+            <part>
+                <name>3</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0011</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>3</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0011</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>STORE_V0_TO_VX_IN_MEMORY_AT_I</name>
+            <part>
+                <name>5</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0101</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>5</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0101</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
+                <necessary>true</necessary>
+            </part>
+        </command>
+
+        <command>
+            <name>FILLS_V0_TO_VX_FROM_MEMORY_AT_I</name>
+            <part>
+                <name>5</name>
+                <startIndex>0</startIndex>
+                <endIndex>3</endIndex>
+                <value>0101</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>6</name>
+                <startIndex>4</startIndex>
+                <endIndex>7</endIndex>
+                <value>0110</value>
+                <necessary>true</necessary>
+            </part>
+            <part>
+                <name>X</name>
+                <startIndex>8</startIndex>
+                <endIndex>11</endIndex>
+                <value></value>
+                <necessary>false</necessary>
+            </part>
+            <part>
+                <name>F</name>
+                <startIndex>12</startIndex>
+                <endIndex>15</endIndex>
+                <value>1111</value>
                 <necessary>true</necessary>
             </part>
         </command>

@@ -24,7 +24,7 @@ public class XmlEngine implements XmlEngineInterface {
     }
 
     protected void init() {
-//        objectList = new CopyOnWriteArrayList<>();
+        //...
     }
 
     @Override

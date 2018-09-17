@@ -76,13 +76,13 @@ public class OpcodeXmlEngine extends XmlEngine {
         out.setName(name);
         out.setParts(commandParts);
 
-        log.info(out.toString() + "\n");
+        log.debug(out.toString() + "\n");
 
         return out;
     }
 
     private GenericCommandPart createCmdPart(Element part){
-        //log.info("Start createCommand!" + "\n");
+        log.debug("Start createCommand!" + "\n");
 
         GenericCommandPart out = new GenericCommandPart();
 
@@ -111,7 +111,7 @@ public class OpcodeXmlEngine extends XmlEngine {
             out.setValueNecessary(false);
         }
 
-        //log.info(out.toString() + "\n");
+        log.debug(out.toString() + "\n");
 
         return out;
     }
@@ -150,7 +150,7 @@ public class OpcodeXmlEngine extends XmlEngine {
 
             Element rootElement = document.getRootElement();
 
-            log.info("ROOT: " + rootElement.getName());
+            log.debug("ROOT: " + rootElement.getName());
 
             //General
             Element general = rootElement.getChild("general");
@@ -171,6 +171,8 @@ public class OpcodeXmlEngine extends XmlEngine {
         List<GenericCommand> results = new ArrayList<>();
         int needed = 0;
         int checked = 0;
+        int checkedMax = 0;  //Maximum der geprüften Teile
+
         for(Object o : objectList){
             needed = 0;
             checked = 0;
@@ -190,12 +192,29 @@ public class OpcodeXmlEngine extends XmlEngine {
                 }
             }
             if(needed == checked){
-                results.add(c.copy());
+                //Disambiguiere mehrere Möglichkeiten
+                if(checked > checkedMax){
+                    checkedMax = checked;
+                    if(!results.isEmpty()){
+                        results.clear();
+                    }
+                    results.add(c.copy());
+                }
             }
         }
-        if(results.size() > 1 || results.isEmpty()){
-            log.info("Error - More than One Command indentified OR nothing!");
-            log.info("Results: " + results.toString());
+        if(results.size() > 1){
+            log.info("Error - More than One Command indentified!");
+            log.info("Results:");
+            log.info("--------------------");
+            for(GenericCommand c : results){
+                log.info(c.toString());
+            }
+            log.info("--------------------");
+            log.info("Bits: " + bits.toString());
+            System.exit(1);
+        }
+        else if(results.isEmpty()){
+            log.info("Error - No Command indentified!");
             log.info("Bits: " + bits.toString());
             System.exit(1);
         }

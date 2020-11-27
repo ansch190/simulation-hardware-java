@@ -149,8 +149,8 @@ public class Test {
         VmGraphicManager vgm = new VmGraphicManager();
         vgm.setConfig(vgmConfig);
 
-        VmGuiManager vmGui = new VmGuiManager();
-        vmGui.addComponent(vgm);
+        //VmGuiManager vmGui = new VmGuiManager();
+        //vmGui.addComponent(vgm);
 
         //add Components
         vm.addComponent(cpu);
@@ -158,7 +158,7 @@ public class Test {
         vm.addComponent(ram);
         vm.addComponent(rom);
         vm.addComponent(vgm);
-        vm.addComponent(vmGui);
+        //vm.addComponent(vmGui);
 
         //create Dependencies
         cpu.addComponent(ram);

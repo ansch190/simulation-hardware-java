@@ -22,6 +22,16 @@ public class GenericCommandPart {
 
     private boolean valueNecessary = false;
 
+    //Copy-Constructor
+    public GenericCommandPart(GenericCommandPart source){
+        name = source.name;
+        startIndexBit = source.startIndexBit;
+        endIndexBit = source.endIndexBit;
+        sizeBits = source.sizeBits;
+        value = source.value;
+        valueNecessary = source.valueNecessary;
+    }
+
     public GenericCommandPart(){
         this.name = "";
         this.startIndexBit = -1;
@@ -94,7 +104,7 @@ public class GenericCommandPart {
             this.sizeBits = endIndexBit - startIndexBit + 1;
         }
         else{
-            System.out.println("GenricCommandPart - Error! setSizeBits mit leeren Values!");
+            System.out.println("GenericCommandPart - Error! setSizeBits mit leeren Values!");
         }
     }
 

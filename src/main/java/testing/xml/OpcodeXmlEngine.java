@@ -1,5 +1,6 @@
 package testing.xml;
 
+import chip8.cpu.opcode.Commands;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
@@ -169,15 +170,14 @@ public class OpcodeXmlEngine extends XmlEngine {
         List<GenericCommand> results = new ArrayList<>();
         int needed = 0;
         int checked = 0;
+
+        System.out.println(bits);  //Debuggin Opdcodes anzeigen
+
         for(Object o : objectList){
             needed = 0;
             checked = 0;
 
             GenericCommand c = (GenericCommand)o;
-
-//            if(c == Commands.SKIP_NEXT_CMD_IF_VX_EQUALS_NN){
-//                log.info("start Debug!");
-//            }
 
             for(GenericCommandPart p : c.getParts()){
                 if(p.isNeeded()){
@@ -191,14 +191,15 @@ public class OpcodeXmlEngine extends XmlEngine {
                 results.add(c);
             }
         }
-        if(results.size() > 1 || results.isEmpty()){
+        if(results.size() != 1){
             log.info("Error - More than One Command indentified OR nothing!");
             log.info("Results: " + results.toString());
             log.info("Bits: " + bits.toString());
             System.exit(1);
         }
         else{
-            return getCmdWithData(results.get(0), bits);
+            GenericCommand cmd = new GenericCommand(results.get(0));
+            return getCmdWithData(cmd, bits);
         }
         return null;
     }

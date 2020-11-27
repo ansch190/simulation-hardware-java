@@ -15,6 +15,15 @@ public class GenericCommand {
 
     private List<GenericCommandPart> commandParts = null;
 
+    //Copy-Constructor
+    public GenericCommand(GenericCommand source){
+        commandName = source.commandName;
+        commandParts = new ArrayList<>(source.commandParts.size());
+        for(GenericCommandPart p : source.commandParts){
+            commandParts.add(new GenericCommandPart(p));
+        }
+    }
+
     public GenericCommand(){
         //...
     }

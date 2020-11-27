@@ -22,10 +22,9 @@ public class Test {
     int HEIGHT_WINDOW = 800;
 
     BufferedImage image = ge.generateRandomImage(WIDTH_WINDOW, HEIGHT_WINDOW);
-    BufferedImage image2 = ge.toGrey(image);
+    //BufferedImage image2 = ge.toGrey(image);
+    BufferedImage image2 = image;
     BufferedImage image3 = ge.scale(image2, 1387, 576);
-
-
 
     //System.exit(0);
 
